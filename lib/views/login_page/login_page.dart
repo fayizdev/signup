@@ -63,6 +63,11 @@ class _LoginPageState extends State<LoginPage> {
                     } else {
                       return 'Please enter a valid email address';
                     }
+                    if (value != email) {
+                      return 'Email is not valid';
+                    } else {
+                      return null;
+                    }
                   }),
             ),
             Padding(
@@ -87,8 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                     } else {
                       return 'Password should have more than 6 charectors';
                     }
-                    if (password.isNotEmpty &&
-                        password != passwordController.text) {
+                    if (value != password) {
                       return 'Password does not match';
                     } else {
                       return null;
